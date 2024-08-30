@@ -1,0 +1,54 @@
+<br>
+<div class="container">
+    <h3 class="text-center">Add Beneficiary</h3>
+    <br>
+    <div class="center">
+        <div class="row">
+            <div class="col">
+              <div class="mb-3">
+                <label for="ifscCode" class="form-label">IFSC Code</label>
+                <input class="form-control" id="ifscCode" type="text" [(ngModel)]="beneficiaryDTO.ifsc">
+              </div>
+              <div class="mb-3">
+                <label for="bId" class="form-label">Beneficiary Id</label>
+                <input class="form-control" id="bId" [(ngModel)]="beneficiaryDTO.bid">
+              </div>
+              <div class="mb-3">
+                <label for="cId" class="form-label">Customer Id</label>
+                <input class="form-control" id="cId" [(ngModel)]="beneficiaryDTO.customerId">
+              </div>
+              <div class="mb-3">
+                <label for="maxLimit" class="form-label">Max Limit</label>
+                <input class="form-control" id="maxLimit" [(ngModel)]="beneficiaryDTO.maxLimit">
+              </div>
+            </div>
+            <div class="col">
+              <div class="mb-3">
+                <label for="bankName" class="form-label">Bank Name</label>
+                <input class="form-control" id="bankName" [(ngModel)]="beneficiaryDTO.bankName">
+              </div>
+              <div class="mb-3">
+                <label for="bName" class="form-label">Beneficiary Name</label>
+                <input class="form-control" id="bName" [(ngModel)]="beneficiaryDTO.bName">
+              </div>
+              <div class="mb-3">
+                <label for="accNumber" class="form-label">Account No</label>
+                <input class="form-control" id="accNumber" [(ngModel)]="beneficiaryDTO.accNumber">
+              </div>
+            </div>
+          </div>
+          <br>
+          <div class="text-center">
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert" *ngIf="successMsg">
+                {{successMsg}}
+                <button type="button" (click)="closeMsg()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" *ngIf="errorMsg">
+                {{errorMsg}}
+                <button type="button" (click)="closeMsg()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <button type="button" class="btn btn-success" (click)="onSubmit()">Submit</button>
+            <button type="button" style="margin-left: 25px;" (click)="onCancel()" class="btn btn-danger">Cancel</button>
+          </div>
+    </div>
+    

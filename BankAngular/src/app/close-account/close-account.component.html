@@ -1,0 +1,32 @@
+<br>
+<div class="container">
+    <h3 class="text-center">Close Account</h3>
+    <br>
+    <div class="center">
+        <div class="row">
+            <div class="col">
+                <label for="ifscCode" class="form-label">Account Number</label>
+                <br>
+                <br>
+                <label for="ifscCode" class="form-label">Password</label>
+            </div>
+            <div class="col">
+                <input class="form-control" id="ifscCode" type="text" [(ngModel)]="userDTO.accountNumber">
+                <br>
+                <input class="form-control" id="ifscCode" type="text" [(ngModel)]="userDTO.password">
+                <br>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert" *ngIf="successMsg">
+                {{successMsg}}
+                <button type="button" (click)="closeMsg()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" *ngIf="errorMsg">
+                {{errorMsg}}
+                <button type="button" (click)="closeMsg()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <button type="button"  class="btn btn-success text-center" (click)="closeAccount()">Close Account</button>
+        </div>
+    </div>
+</div>

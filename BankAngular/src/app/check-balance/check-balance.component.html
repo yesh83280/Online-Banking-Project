@@ -1,0 +1,27 @@
+<br>
+<div class="container">
+    <h3 class="text-center">Check Balance</h3>
+    <br>
+    <div class="center">
+        <div class="row">
+            <div class="alert alert-danger alert-dismissible fade show text-center" role="alert" *ngIf="errorMsg">
+                {{errorMsg}}
+                <button type="button" (click)="closeMsg()" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="col">
+                <label for="ifscCode" class="form-label">Account Number</label>
+                <br>
+                <br>
+                <label for="ifscCode" class="form-label">Balance</label>
+            </div>
+            <div class="col">
+                <input class="form-control" id="ifscCode" type="text" [(ngModel)]="accNumber">
+                <br>
+                <button type="button" class="btn btn-success" (click)="checkBalance()">Check Balance</button>
+                <br>
+                <p *ngIf="balance>=0"> Amount in Rs - {{balance| currency: 'INR':true}}</p>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
